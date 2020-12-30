@@ -1,0 +1,1 @@
+gcc myps.c -o myps.out
