@@ -58,22 +58,22 @@ int main(int argc, char *argv[])
 {
 	int count;
 	char comparaison[]="-o";
+	char *token, *r;
+	r = argv[2];
+	assert(argv[2] !=NULL);
 	//char n = atoi(argv[1]);
 	if(argc>=2){
 		if (strcmp(comparaison,argv[1])==0)
 		{
-			for (count = 2; count < argc; count++)
-			{
-				if(strcmp(argv,separator)==0)
-				{
-					printf("	");
-				}
-				return 0;
-				else{
-					printf("%s", argv[count]);
-				}
-				return 0;
-			}
+			//for (count = 2; count < argc; count++)
+			//{
+				
+				while((token = strsep(argv[2],",")) != NULL)
+				{				
+				printf("%s     ", toupper(token));
+				}			
+			//}
+			
 		printf("\n");
 		}
 		else{
