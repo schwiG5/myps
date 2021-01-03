@@ -54,13 +54,15 @@
 	return 0;
 }
 */
+/*
+
 int main(int argc, char *argv[])
 {
 	int count;
 	char comparaison[]="-o";
 	char *token, *r;
 	r = argv[2];
-	assert(argv[2] !=NULL);
+	//assert(argv[2] !=NULL); la machine n'arrive pas a prendre en compte
 	//char n = atoi(argv[1]);
 	if(argc>=2){
 		if (strcmp(comparaison,argv[1])==0)
@@ -84,6 +86,51 @@ int main(int argc, char *argv[])
 	else{
 		printf("erreur2\n");
 		return 0;
+	}
+	return 0;
+}
+
+*/
+
+
+
+
+//  FINALE VERSION
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+/*
+exemple internet dont je me suis inspiré
+
+int main()
+{
+    char *string,*found;
+
+    string = strdup("Hello, yeah there, peasants yeah yeah!");
+    printf("Original string: '%s'\n",string);
+
+    while( (found = strsep(&string,",")) != NULL )
+        printf("%s    ",found);
+    	printf("\n");
+
+    return(0);
+*/
+
+int main(int argc, char  *argv[])
+{
+	char *found;
+	//argv = strdup(argv[2]);
+	//char n = atoi(found);
+	char comp[]= "-o";
+	if (strcmp(comp,argv[1])==0)
+	{
+		/* code */
+		while((found=strsep(&argv[2],","))!=NULL)
+			printf("%s    ",found);
+		printf("\n");
 	}
 	return 0;
 }
