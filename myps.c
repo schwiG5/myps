@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 //  FINALE VERSION
 
 
-
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -122,6 +122,9 @@ int main()
 int main(int argc, char  *argv[])
 {
 	char *found;
+	char *cover;
+	char *end;
+	int i;
 	//argv = strdup(argv[2]);
 	//char n = atoi(found);
 	char comp[]= "-o";
@@ -129,6 +132,12 @@ int main(int argc, char  *argv[])
 	{
 		/* code */
 		while((found=strsep(&argv[2],","))!=NULL)
+			//while(*cover++= toupper(*found++))
+			for (int i = 0; i != '\0'; ++i)
+			{
+				found = toupper(found[i]);
+				/* code */
+			}
 			printf("%s    ",found);
 		printf("\n");
 	}
